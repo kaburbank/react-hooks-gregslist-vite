@@ -1,4 +1,4 @@
-function Search() {
+function Search({ onSearch }) {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("submitted");
@@ -11,8 +11,8 @@ function Search() {
         id="search"
         placeholder="search free stuff"
         value={""}
-        onChange={(e) => console.log(e.target.value)}
-      />
+        onChange={(e) => onSearch(e.target.value)}
+      /> { // use new prop in the onChange to set state }
       <button type="submit">🔍</button>
     </form>
   );
